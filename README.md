@@ -1,4 +1,4 @@
-# Racing_game
+# Dice game
  
  Technologies used: Base html for structure, CSS for styling of the headers and dividers and javascript to add functionality for the game as well as the a.i.
  
