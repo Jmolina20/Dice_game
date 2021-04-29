@@ -80,12 +80,12 @@ function start_game(){
         total = dice1 + dice2 + dice3;
         if (Math.abs(total-p1_guess) < Math.abs(total-p2_guess))
             {
-                play1_money = play1_money + play2_bet + play1_bet;}
-                document.getElementById("finale").innerHTML = "Player 1 is correct and " + String(p1_guess) + " is the number closest to dice total";}
+                play1_money = play1_money + play2_bet + play1_bet;
+                document.getElementById("finale").innerHTML = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";}
         else if (Math.abs(total-p2_guess) < Math.abs(total-p1_guess))
             {
                 play2_money = play2_money + play2_bet + play1_bet;
-                document.getElementById("finale").innerHTML ="Player 2 is correct and " + String(p2_guess) + " is the number closest to dice total";} }
+                document.getElementById("finale").innerHTML ="Player 2 is correct and " + p2_guess + " is the number closest to dice total";} }
     if (num_players == 1){
         document.getElementById("p1_scoreboard").innerText = "Current amount: " + play1_bet + " out of " + play1_money;
         play2_bet = Math.floor(Math.random() * 100) + 1;
@@ -99,16 +99,16 @@ function start_game(){
         total = dice1 + dice2 + dice3;
         if (Math.abs(total-p1_guess) < Math.abs(total-p2_guess))
             {
-            document.getElementById("finale").innerHTML="Player 1 is correct and " + String(p1_guess) + " is the number closest to dice total";
+            document.getElementById("finale").innerHTML="Player 1 is correct and " + p1_guess + " is the number closest to dice total";
             play1_money = play1_money + play2_bet + play1_bet;}
         else if (Math.abs(total-p2_guess) < Math.abs(total-p1_guess))
             {
-            document.getElementById("finale").innerHTML="Player 2 is correct and " + String(p2_guess) + " is the number closest to dice total";
+            document.getElementById("finale").innerHTML="Player 2 is correct and " + p2_guess + " is the number closest to dice total";
             play2_money = play2_money + play2_bet + play1_bet;}
     }
 
-
+}
         </script>
-
+       
 </body>
 </html>
