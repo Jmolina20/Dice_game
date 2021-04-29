@@ -86,7 +86,7 @@ function start_game(){
             {
                 play2_money = play2_money + play2_bet + play1_bet;
                 document.getElementById("finale").innerHTML ="Player 2 is correct and " + p2_guess + " is the number closest to dice total";} }
-    if (num_players == 1){
+   else if (num_players == 1){
         document.getElementById("p1_scoreboard").innerText = "Current amount: " + play1_bet + " out of " + play1_money;
         play2_bet = Math.floor(Math.random() * 100) + 1;
         document.getElementById("p2_scoreboard").innerText = "Current amount: " + play2_bet + " out of " + play2_money;
