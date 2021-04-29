@@ -49,16 +49,16 @@
         </div>
         <script>
             var num_players;
-var play1_money;
-var play2_money;
-var play1_bet;
-var play2_bet;
-var dice1;
-var dice2;
-var dice3;
-var total;
-var p1_guess;
-var p2_guess;
+var play1_money=0;
+var play2_money=0;
+var play1_bet=0;
+var play2_bet=0;
+var dice1=0;
+var dice2=0;
+var dice3=0;
+var total=0;
+var p1_guess=0;
+var p2_guess=0;
 function set_play1_money(){play1_money=document.getElementById("temp2").value;
 play2_money=play1_money;}
 function set_num_players(){num_players=document.getElementById("temp1").value;}
@@ -81,11 +81,13 @@ function start_game(){
         if (Math.abs(total-p1_guess) < Math.abs(total-p2_guess))
             {
                 play1_money = play1_money + play2_bet + play1_bet;
-                document.getElementById("finale").innerHTML = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";}
+                document.getElementById("finale").innerHTML = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";
+                console.log(p1_guess)}
         else if (Math.abs(total-p2_guess) < Math.abs(total-p1_guess))
             {
                 play2_money = play2_money + play2_bet + play1_bet;
-                document.getElementById("finale").innerHTML ="Player 2 is correct and " + p2_guess + " is the number closest to dice total";} }
+                document.getElementById("finale").innerHTML ="Player 2 is correct and " + p2_guess + " is the number closest to dice total";
+                console.log(p2_guess);} }
    else if (num_players == 1){
         document.getElementById("p1_scoreboard").innerText = "Current amount: " + play1_bet + " out of " + play1_money;
         play2_bet = Math.floor(Math.random() * 100) + 1;
