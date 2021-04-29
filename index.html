@@ -36,19 +36,19 @@
         <p id="p1_scoreboard">Current amount:</p>
         <h3>Player 2</h3>
         <p id="p2_scoreboard">Current amount:</p><br>
-        <h3 id="p1_guess"></h3>
+        <h3 id="p1_guess">Enter player 1's estimate</h3>
             <input type="number" id="guess1">
-            <button onclick="">Enter</button>
-        <h3 id="p2_guess"></h3>
+            <button onclick="set_p1_guess()">Enter</button>
+        <h3 id="p2_guess">Enter player 2's estimate</h3>
             <input type="number" id="guess2">
-            <button onclick="">Enter</button><br><br>
+            <button onclick="set_p2guess()">Enter</button><br><br>
         <p id="finale"></p>
         <br>
         <button onclick="start_game()">Start next round</button><br><br><br>
         <img id= "curtain" src="https://media.giphy.com/media/3oGRFlpAW4sIHA02NW/giphy.gif">
         </div>
         <script>
-            var num_players;
+var num_players=0;
 var play1_money=0;
 var play2_money=0;
 var play1_bet=0;
@@ -64,16 +64,14 @@ play2_money=play1_money;}
 function set_num_players(){num_players=document.getElementById("temp1").value;}
 function set_play1_bet(){play1_bet=document.getElementById("bet1").value}
 function set_play2_bet(){play2_bet=document.getElementById("bet2").value}   
+function set_p1guess(){p1_guess=document.getElementById("guess1").value;}
+function set_p2guess(){p2_guess=document.getElementById("guess2").value;}
 function start_game(){  
     if (num_players > 1 ){
         set_play1_bet();
         set_play2_bet();
         document.getElementById("p1_scoreboard").innerText = "Current amount: " + play1_bet + " out of " + play1_money;
         document.getElementById("p2_scoreboard").innerText = "Current amount: " + play2_bet + " out of " + play2_money;
-        document.getElementById("p1_guess").value = "Enter player 1's estimate";
-        document.getElementById("p2_guess").value = "Enter player 2's estimate";
-        function set_p1guess(){p1_guess=document.getElementById("guess1").value;}
-        function set_p1guess(){p2_guess=document.getElementById("guess2").value;}
         dice1 = Math.floor(Math.random() * 6) + 1;
         dice2 = Math.floor(Math.random() * 6) + 1; 
         dice3 = Math.floor(Math.random() * 6) + 1;
