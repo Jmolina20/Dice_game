@@ -9,13 +9,11 @@ var dice3;
 var total;
 var p1_guess;
 var p2_guess;
-var closest="test";
 function set_play1_money(){play1_money=document.getElementById("temp2").value;
 play2_money=play1_money;}
 function set_num_players(){num_players=document.getElementById("temp1").value;}
 function set_play1_bet(){play1_bet=document.getElementById("bet1").value}
 function set_play2_bet(){play2_bet=document.getElementById("bet2").value}   
-function results(){document.getElementById("finale").innerHTML=closest};
 function start_game(){  
     if (num_players > 1 ){
         set_play1_bet();
@@ -32,15 +30,12 @@ function start_game(){
         total = dice1 + dice2 + dice3;
         if (Math.abs(total-p1_guess) < Math.abs(total-p2_guess))
             {
-            closest = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";
-            play1_money = play1_money + play2_bet + play1_bet;
-            results();}
+                play1_money = play1_money + play2_bet + play1_bet;}
+                document.getElementById("finale").innerHTML = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";}
         else if (Math.abs(total-p2_guess) < Math.abs(total-p1_guess))
             {
-            closest = "Player 2 is correct and " + p2_guess + " is the number closest to dice total";
-            play2_money = play2_money + play2_bet + play1_bet;
-            results();}
-    }
+                play2_money = play2_money + play2_bet + play1_bet;
+                document.getElementById("finale").innerHTML ="Player 2 is correct and " + p2_guess + " is the number closest to dice total";} }
     else if (num_players == 1){
         document.getElementById("p1_scoreboard").innerText = "Current amount: " + play1_bet + " out of " + play1_money;
         play2_bet = Math.floor(Math.random() * 100) + 1;
@@ -54,13 +49,11 @@ function start_game(){
         total = dice1 + dice2 + dice3;
         if (Math.abs(total-p1_guess) < Math.abs(total-p2_guess))
             {
-            closest = "Player 1 is correct and " + p1_guess + " is the number closest to dice total";
-            play1_money = play1_money + play2_bet + play1_bet;
-            results();}
+            document.getElementById("finale").innerHTML="Player 1 is correct and " + p1_guess + " is the number closest to dice total";
+            play1_money = play1_money + play2_bet + play1_bet;}
         else if (Math.abs(total-p2_guess) < Math.abs(total-p1_guess))
             {
-            closest = "Player 2 is correct and " + p2_guess + " is the number closest to dice total";
-            play2_money = play2_money + play2_bet + play1_bet;
-            results();}
+            document.getElementById("finale").innerHTML="Player 2 is correct and " + p2_guess + " is the number closest to dice total";
+            play2_money = play2_money + play2_bet + play1_bet;}
     }
-}
+
